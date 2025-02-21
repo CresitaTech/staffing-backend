@@ -19,9 +19,8 @@ virtualenv ./envs/
 # Activate virtual environment
 source envs/bin/activate
 4. Clone git repository
-git clone "https://github.com/Manisha-Bayya/simple-django-project.git"
+git clone "git@github.com:CresitaTech/staffing-backend.git"
 5. Install requirements
-cd simple-django-project/
 pip install -r requirements.txt
 6. Load sample data into MySQL
 # open mysql bash
@@ -32,7 +31,7 @@ mysql> source ~/simple-django-project/world.sql
 mysql> exit;
 7. Edit project settings
 # open settings file
-vim panorbit/settings.py
+vim staffingapp/settings.py
 
 # Edit Database configurations with your MySQL configurations.
 # Search for DATABASES section.
@@ -47,13 +46,6 @@ DATABASES = {
     }
 }
 
-# Edit email configurations.
-# Search for email configurations
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = '<your-email>'
-EMAIL_HOST_PASSWORD = '<your-email-password>'
-EMAIL_PORT = 587
 
 # save the file
 8. Run the server
@@ -61,8 +53,7 @@ EMAIL_PORT = 587
 python manage.py makemigrations
 python manage.py migrate
 
-# For search feature we need to index certain tables to the haystack. For that run below command.
-python manage.py rebuild_index
+
 
 # Run the server
 python manage.py runserver 0:8001
